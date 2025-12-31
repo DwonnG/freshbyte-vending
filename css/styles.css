@@ -5,6 +5,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Offset for fixed nav when clicking anchor links */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
 /* Hero Gradient Background */
 .gradient-bg {
     background: linear-gradient(135deg, #2D3E36 0%, #3d5a4a 100%);
