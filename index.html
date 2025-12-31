@@ -188,7 +188,7 @@
                 
                 <div class="bg-fresh-cream p-6 rounded-xl text-center">
                     <div class="text-4xl font-bold text-fresh-green mb-2">500K+</div>
-                    <p class="text-gray-600">Pizzas sold in NA</p>
+                    <p class="text-gray-600">Pizzas sold in North America</p>
                 </div>
             </div>
             
@@ -378,6 +378,15 @@
     </footer>
 
     <script>
+        // Scroll to top on page load/refresh
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname);
+        }
+        window.scrollTo(0, 0);
+        
         // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
