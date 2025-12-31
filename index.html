@@ -45,11 +45,30 @@
                 <img src="images/freshbyteslogo.png" alt="FreshByte Vending Logo" class="h-14 w-14 rounded-full">
                 <span class="text-xl font-bold">FreshByte Vending</span>
             </a>
+            
+            <!-- Desktop Nav -->
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="hover:text-fresh-light transition">About</a>
                 <a href="#benefits" class="hover:text-fresh-light transition">Benefits</a>
                 <a href="#how-it-works" class="hover:text-fresh-light transition">How It Works</a>
                 <a href="#contact" class="hover:text-fresh-light transition">Contact</a>
+            </div>
+            
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10">
+                <span class="hamburger-line w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-white transition-all"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/20 pt-4">
+            <div class="flex flex-col space-y-4 text-center">
+                <a href="#about" class="hover:text-fresh-light transition py-2">About</a>
+                <a href="#benefits" class="hover:text-fresh-light transition py-2">Benefits</a>
+                <a href="#how-it-works" class="hover:text-fresh-light transition py-2">How It Works</a>
+                <a href="#contact" class="hover:text-fresh-light transition py-2">Contact</a>
             </div>
         </div>
     </nav>
@@ -88,7 +107,7 @@
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2">
+            <div class="hidden md:block md:w-1/2">
                 <img src="images/freshbytesbanner.png" alt="Fresh vending machine with food" class="rounded-2xl shadow-2xl opacity-50">
             </div>
         </div>
@@ -358,6 +377,31 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const nav = document.querySelector('nav');
+        
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
 
