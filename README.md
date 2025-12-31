@@ -26,39 +26,6 @@ A simple, professional landing page for FreshByte Vending.
 └── README.md                 # This file
 ```
 
-## 🚀 Deployment Options
-
-### Option 1: GitHub Pages (Free)
-
-1. Create a new GitHub repository
-2. Push this code to the repo
-3. Go to **Settings** → **Pages**
-4. Select **Source**: Deploy from a branch
-5. Select **Branch**: main, / (root)
-6. Click **Save**
-7. Your site will be live at `https://yourusername.github.io/repo-name`
-
-### Option 2: Netlify (Free)
-
-1. Go to [netlify.com](https://netlify.com)
-2. Click **Add new site** → **Import an existing project**
-3. Connect your GitHub repo
-4. Deploy settings: Leave defaults (no build command needed)
-5. Click **Deploy**
-6. Your site will be live instantly
-
-### Option 3: Connect Custom Domain
-
-After deploying to GitHub Pages or Netlify:
-
-1. Add a `CNAME` file with: `freshbytefoods.com`
-2. In your domain registrar (Porkbun), add DNS records:
-   - For GitHub Pages:
-     - Type: CNAME, Name: www, Value: `yourusername.github.io`
-     - Type: A, Name: @, Value: `185.199.108.153` (GitHub's IP)
-   - For Netlify:
-     - Follow Netlify's custom domain instructions
-
 ## 🧪 Local Development
 
 Just open `index.html` in your browser:
